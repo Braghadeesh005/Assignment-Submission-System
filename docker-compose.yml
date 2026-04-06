@@ -20,29 +20,29 @@ services:
       retries: 12
       start_period: 20s
 
-backend:
-  build:
-    context: ./backend
-  container_name: assignment-backend
-  restart: unless-stopped
-  environment:
-    SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
-    SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
-    SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
-    JWT_SECRET: ${JWT_SECRET}
-    JWT_EXPIRATION: ${JWT_EXPIRATION}
-    CORS_ORIGIN: ${CORS_ORIGIN}
-  depends_on:
-    mysql:
-      condition: service_healthy
-  ports:
-    - "5000:8080"
-  healthcheck:
-    test: ["CMD-SHELL", "curl -fsS http://localhost:8080/actuator/health || exit 1"]
-    interval: 15s
-    timeout: 5s
-    retries: 12
-    start_period: 30s
+  backend:
+    build:
+      context: ./backend
+    container_name: assignment-backend
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: ${JWT_EXPIRATION}
+      CORS_ORIGIN: ${CORS_ORIGIN}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5000:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
 
   frontend:
     build:
