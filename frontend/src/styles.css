@@ -1,0 +1,159 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f5f7fb 0%, #e8eefc 100%);
+  color: #182033;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  background: #1f4fc9;
+  color: white;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background: white;
+  color: #1f4fc9;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: #51607d;
+}
+
+.header-actions,
+.meta-column {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.auth-card,
+.panel,
+.assignment-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(31, 79, 201, 0.12);
+}
+
+.auth-card {
+  max-width: 440px;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #c7d3eb;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  background: white;
+}
+
+.assignment-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.assignment-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.review-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.badge {
+  background: #dbe7ff;
+  color: #1f4fc9;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.badge-muted {
+  background: #edf1f7;
+  color: #51607d;
+}
+
+.review-summary,
+.empty-state,
+.link-text,
+.error-text {
+  color: #51607d;
+}
+
+.error-text {
+  color: #b42318;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .app-header,
+  .assignment-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
