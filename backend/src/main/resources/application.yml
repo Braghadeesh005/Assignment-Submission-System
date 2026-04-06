@@ -48,4 +48,4 @@ app:
 
 logging:
   pattern:
-    console: '{"timestamp":"%d{yyyy-MM-dd''T''HH:mm:ss.SSSXXX}","level":"%p","logger":"%c{1.}","thread":"%t","message":"%replace(%m){''"'',''\"''}"}%n'
+    console: '{"timestamp":"%d{yyyy-MM-dd''T''HH:mm:ss.SSSXXX}","level":"%p","logger":"%c{1}","thread":"%t","message":"%replace(%m){''"'',''\"''}"}%n'
